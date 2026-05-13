@@ -1,34 +1,54 @@
-# Ver las 2 versiones (paso a paso, súper simple)
+# Ver las 2 versiones (sin usar tu compu, solo GitHub Web)
 
-## Opción 1: abrir archivos directo (sin instalar nada)
-1. En tu explorador de archivos, entrá a esta carpeta: `/workspace/ChatGPT`.
-2. Hacé doble click en `index-original.html` para ver la **versión vieja**.
-3. Hacé doble click en `index.html` para ver la **versión nueva**.
+## Opción 1 (la más fácil): ver los archivos en GitHub
+1. Entrá a tu repo en GitHub (en el navegador).
+2. Abrí la rama del PR (arriba, donde dice `main` o nombre de rama).
+3. Hacé click en estos archivos:
+   - `index-original.html` = versión vieja
+   - `index.html` = versión nueva
+   - `styles-original.css` = estilos viejos
+   - `styles.css` = estilos nuevos
 
-> Si algo se ve "sin estilo", usá la Opción 2.
+> Esto sirve para **leer/comparar código**, pero no siempre muestra el diseño final visual.
 
-## Opción 2: con servidor local (recomendado)
-1. Abrí una terminal.
-2. Escribí esto y apretá Enter:
+## Opción 2 (recomendada): verlas renderizadas desde GitHub Web
+Usá este formato de link (sin instalar nada):
 
-```bash
-cd /workspace/ChatGPT
-python3 -m http.server 4173
+```text
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/USUARIO/REPO/RAMA/ARCHIVO
 ```
 
-3. Abrí tu navegador y visitá:
-   - **Versión vieja**: `http://127.0.0.1:4173/index-original.html`
-   - **Versión nueva**: `http://127.0.0.1:4173/index.html`
+### Ejemplo (reemplazando tus datos)
+- Versión vieja:
+```text
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/USUARIO/REPO/RAMA/index-original.html
+```
 
-4. Para comparar fácil:
-   - Abrí cada link en una pestaña distinta.
-   - Cambiá de pestaña para ver diferencias rápidas.
+- Versión nueva:
+```text
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/USUARIO/REPO/RAMA/index.html
+```
 
-5. Para apagar el servidor:
-   - Volvé a la terminal.
-   - Presioná `Ctrl + C`.
+## Cómo sacar esos datos (USUARIO, REPO, RAMA)
+1. En GitHub, copiá la URL de tu repo.
+   - Si tu URL es `https://github.com/juan/thequipamiento`,
+   - entonces `USUARIO = juan` y `REPO = thequipamiento`.
+2. `RAMA` es la rama que estás viendo (selector arriba izquierda del listado de archivos).
 
-## Qué mirar (modo fácil)
-- ¿Cuál te parece más clara al primer vistazo?
-- ¿En cuál encontrás más rápido el botón para contactar?
-- ¿En cuál te dan más ganas de escribir por WhatsApp?
+## Opción 3 (la mejor a largo plazo): activar GitHub Pages
+1. En tu repo: **Settings**.
+2. Menú izquierdo: **Pages**.
+3. En “Build and deployment”:
+   - Source: `Deploy from a branch`.
+   - Branch: elegí la rama (por ejemplo `main`) y carpeta `/ (root)`.
+4. Guardá.
+5. GitHub te va a dar una URL pública para ver la web.
+
+## Si querés comparar rápido (sin marearte)
+- Abrí 2 pestañas:
+  - pestaña 1: `index-original.html`
+  - pestaña 2: `index.html`
+- Mirá solo 3 cosas:
+  1. ¿Cuál se entiende más rápido?
+  2. ¿En cuál encontrás antes el botón de contacto?
+  3. ¿Cuál te da más confianza?
